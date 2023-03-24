@@ -2,6 +2,7 @@ const express = require('express');
 const colors = require('colors');
 const dotenv = require('dotenv').config();
 const userRoute = require('./routes/user');
+const authRoute = require('./routes/auth');
 const connectDB = require('./config/db');
 const port = process.env.PORT || 5000;
 
@@ -13,6 +14,7 @@ const app = express();
 app.use(express.json());
 
 
+app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 
 
