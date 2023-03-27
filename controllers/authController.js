@@ -23,7 +23,7 @@ const register = async (req, res) => {
     res.cookie('token', token, {
         httpOnly:true,
         expires: new Date(Date.now() + oneDay)
-    })
+    });
 
     res.status(StatusCodes.CREATED).json({ user:tokenUser });
 };
